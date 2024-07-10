@@ -23,7 +23,7 @@ const TOKEN_METADATA_PROGRAM_ID = new PublicKey(
 const tokenMintAccount = new PublicKey("4xGGE77CahERcLivH2NumVBf7NVbNAZKf4gvtANWbTHM");
 
 const metadataData = {
-  name: "Solana Training Token",
+  name: "luis Token",
   symbol: "TRAINING",
   // Arweave / IPFS / Pinata etc link using metaplex standard for off-chain data
   uri: "https://arweave.net/1234",

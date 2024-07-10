@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "start": "npx esrun ./NFTS/index.ts"
+  },
   "dependencies": {
+    "@metaplex-foundation/js": "^0.20.1",
     "@metaplex-foundation/mpl-token-metadata": "^2.13.0",
     "@solana-developers/helpers": "^2.3.0",
     "@solana/spl-token": "^0.4.7",

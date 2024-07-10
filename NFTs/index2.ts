@@ -6,6 +6,7 @@ import {
   irysStorage,
   toMetaplexFile,
   NftWithToken,
+  Nft,
 } from "@metaplex-foundation/js"
 import * as fs from "fs"
 
@@ -76,7 +77,7 @@ async function createNft(
   uri: string,
   nftData: NftData,
   collectionMint: PublicKey
-): Promise<NftWithToken> {
+): Promise<Nft> {
   const { nft } = await metaplex.nfts().create(
     {
       uri: uri, // metadata URI
@@ -106,7 +107,7 @@ async function createCollectionNft(
   metaplex: Metaplex,
   uri: string,
   data: CollectionNftData
-): Promise<NftWithToken> {
+): Promise<Nft> {
   const { nft } = await metaplex.nfts().create(
     {
       uri: uri,

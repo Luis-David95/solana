@@ -1,13 +1,6 @@
 import { initializeKeypair } from "./initializeKeypair"
 import { Connection, clusterApiUrl, PublicKey, Signer } from "@solana/web3.js"
-import {
-  Metaplex,
-  keypairIdentity,
-  irysStorage,
-  toMetaplexFile,
-  NftWithToken,
-  Nft,
-} from "@metaplex-foundation/js"
+import {  Metaplex,  keypairIdentity,  irysStorage,  toMetaplexFile,  NftWithToken,  Nft} from "@metaplex-foundation/js"
 import * as fs from "fs"
 
 interface NftData {
@@ -77,7 +70,7 @@ async function createNft(
   uri: string,
   nftData: NftData,
   collectionMint: PublicKey
-): Promise<Nft> {
+): Promise<NftWithToken> {
   const { nft } = await metaplex.nfts().create(
     {
       uri: uri, // metadata URI
@@ -107,7 +100,7 @@ async function createCollectionNft(
   metaplex: Metaplex,
   uri: string,
   data: CollectionNftData
-): Promise<Nft> {
+): Promise<NftWithToken> {
   const { nft } = await metaplex.nfts().create(
     {
       uri: uri,

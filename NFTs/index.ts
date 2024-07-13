@@ -78,7 +78,7 @@ async function main() {
     collectionAuthority: user,
   };
 
-  const nft = await createNft(metaplex, uri, nftData);
+  const nft = await createNft(metaplex, uri, nftData,);
 
   // upload data for the collection NFT and get the URI for the metadata
   const collectionUri = await uploadMetadata(metaplex, collectionNftData);
@@ -157,7 +157,8 @@ async function createCollectionNft(
 async function createNft(
   metaplex: Metaplex,
   uri: string,
-  nftData: NftData
+  nftData: NftData,
+  collectionMint: PublicKey
 ): Promise<Nft> {
   const { nft } = await metaplex.nfts().create(
     {
